@@ -30,32 +30,13 @@ public class Vehicle {
         this.meansoftransport = meansoftransport;
         this.Type=Type;
     }
-    /**
-     * 
-     *  
-     
-    public Vehicle( String mark) {
-        this.numberofpassengers =0;
-        this.height = 0;
-        this.width = 0;
-        this.length = 0;
-        this.numberofwheels = 0;
-        this.numberDoors = 0;
-        this.mark = mark;
-        this.meansoftransport = "nada";
-        this.Type="nada";
-    }*/
-
-    
-    
-
     public void setNumberofpassengers(Integer numberofpassengers) {
         this.numberofpassengers = numberofpassengers;
     }
 
     @Override
     public String toString() {
-        return "Vehicle: " + Type + ", con " + numberofpassengers + " pasajeros de  altura=" + height + ", peso=" + width + " y longitud=" + length + "\n con " + numberofwheels + " ruedas y " + numberDoors + " puertas maca" + mark + " que se trasporta en el " + meansoftransport+"\n" ;
+        return "Vehicle: " + Type + ", con " + numberofpassengers + " pasajeros de  altura=" + height + ", peso=" + width + " y longitud=" + length + "\ncon " + numberofwheels + " ruedas y " + numberDoors + " puertas, marca " + mark + " que se trasporta en el " + meansoftransport+".\n" ;
     }
 
    

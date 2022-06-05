@@ -17,40 +17,82 @@ public class Ejercicio_4 {
     public static void main(String[] args) {
         ArrayList<Vehicle> Datos =new ArrayList();
         int i = 0;
-        Integer np;
+        String type;
+        Integer numberofpassengers;
+        double height;
+        double width;
+        double length;
+        Integer numberofwheels;
+        Integer numberDoors;
+        String mark;
+        String meansoftransport;
         do{
             Scanner entry = new Scanner(System.in);
             System.out.println("Tipo de vehiculo" ); 
-         
-            String t = entry.nextLine();
-           
-            
-            System.out.println("cuntos pasajeroso caben"); 
-            try {np = Integer.parseInt(entry.nextLine());
-            }catch(NumberFormatException e){
-                System.out.println("parametro digitado errone se guardara en su lugar 0 pasajeroso ");
-                np = 0;
+            type = entry.nextLine();
+            System.out.println("cuantos pasajeroso caben"); 
+            try {
+                numberofpassengers = Integer.parseInt(entry.nextLine());
             }
-            System.out.println("altura del vehiculo?" ); 
-            double h = Double.parseDouble(entry.nextLine());
-            System.out.println("peso del vehiculo  "); 
-            double w = Double.parseDouble(entry.nextLine());
-            System.out.println("longitud del vehiculo "); 
-            double l = Double.parseDouble(entry.nextLine());
-            System.out.println("numero de ruedas "); 
-            Integer nw = Integer.parseInt(entry.nextLine());
-            System.out.println("cuantas puertas tiene? "); 
-            Integer mt = Integer.parseInt(entry.nextLine());
-            System.out.println("cual es la amrca"); 
-            String m = entry.nextLine();
+            catch(NumberFormatException e){
+                System.out.println("Parametro digitado erroneo se guardara en su lugar 0 pasajeroso ");
+                numberofpassengers = 0;
+            }
+            System.out.println("Altura del vehiculo en metros, por favor solo digite un dato numerico " ); 
+            try {
+                height = Double.parseDouble(entry.nextLine());
+            }
+            catch(NumberFormatException e){
+                System.out.println("parametro digitado erroneo se guardara en su lugar 0 en altura ");
+                height = 0;
+            }
+            System.out.println("Peso del vehiculo en Kg, por favor solo digite un dato numerico "); 
+            try {
+                width = Double.parseDouble(entry.nextLine());
+            }
+            catch(NumberFormatException e){
+                System.out.println("parametro digitado erroneo se guardara en su lugar 0 en peso ");
+                width = 0;
+            }
+            System.out.println("Longitud del vehiculo en metros, por favor solo digite un dato numerico  "); 
+            try {
+                length = Double.parseDouble(entry.nextLine());
+            }
+            catch(NumberFormatException e){
+                System.out.println("parametro digitado erroneo se guardara en su lugar 0 en longitud ");
+                length = 0;
+            }
+            System.out.println("Numero de ruedas, por favor solo digite un dato numerico "); 
+            try {
+                numberofwheels = Integer.parseInt(entry.nextLine());
+            }
+            catch(NumberFormatException e){
+                System.out.println("parametro digitado erroneo se guardara en su lugar 0 en numero de ruedas ");
+                numberofwheels = 0;
+            }
+            System.out.println("Cuantas puertas tiene, por favor solo digite un dato numerico "); 
+            try {
+                numberDoors = Integer.parseInt(entry.nextLine());
+            }catch(NumberFormatException e){
+                System.out.println("parametro digitado erroneo se guardara en su lugar 0 en numero de puertas ");
+                numberDoors = 0;
+            }
+            System.out.println("Cual es la Marca del vehiculo"); 
+            mark = entry.nextLine();
             System.out.println("Donde se puede usar"); 
-            String nd = entry.nextLine();
-            Vehicle V= new Vehicle(t,np,h,w,l,nw,mt,nd,m);
+            meansoftransport = entry.nextLine();
+            Vehicle V= new Vehicle(type,numberofpassengers,height,width,length,numberofwheels,numberDoors,mark,meansoftransport);
             System.out.println("Vehiculo guardado");
             Datos.add(V);
             i++;
-            System.out.println("Si desea salir digite *salir* ");
+            System.out.println("Si desea salir digite *salir*, si no solo oprima enter");
+            String option = entry.nextLine();
+            if(option.equalsIgnoreCase("salir")){
+                i=10;
+            }
+            
         }while(!(i==10));
+        System.out.println("Los vehiculos guardados son:\n");
         for(Vehicle vehicle: Datos){
             System.out.println(vehicle.toString());
         }
