@@ -1,0 +1,2 @@
+Sí es posible ejecutar un programa en java que contenga varias clases con métodos main pero van a ser sobrecargados, 
+el punto de entrada a un programa se determina por el método Main que tenga como parámetro String[ ] arg. 

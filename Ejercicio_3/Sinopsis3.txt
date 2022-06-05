@@ -1,0 +1,2 @@
+Escriba un programa en java que genere aleatoriamente (Ayuda: Vea la clase Math para saber cómo generar números aleatorios en java) un array de números reales, y lo ordene mediante el algoritmo de la burbuja o mediante quick sort (esto deberá poder elegirlo el usuario).
+
