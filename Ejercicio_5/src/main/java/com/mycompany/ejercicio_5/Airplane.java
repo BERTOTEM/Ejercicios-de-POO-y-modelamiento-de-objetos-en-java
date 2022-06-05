@@ -15,8 +15,8 @@ public class Airplane extends Vehicle {
     private Integer numberofturbines;
     private String liftsurfaces;
 
-    public Airplane( String Type, Integer numberofpassengers, double height, double width, double length, Integer numberDoors, String mark, String meansoftransport,Integer numberofturbines, String liftsurfaces) {
-        super(Type, numberofpassengers, height, width, length, numberDoors, mark, meansoftransport);
+    public Airplane( String id, Integer numberofpassengers, double height, double width, double length, Integer numberDoors, String mark, String meansoftransport,Integer numberofturbines, String liftsurfaces) {
+        super(id, numberofpassengers, height, width, length, numberDoors, mark, meansoftransport);
         this.numberofturbines = numberofturbines;
         this.liftsurfaces = liftsurfaces;
     }
@@ -36,13 +36,13 @@ public class Airplane extends Vehicle {
 
     @Override
     public String ImportantBrands() {
-        return super.ImportantBrands()+"Airbus, Boeing 73,Boeing 787 Dreamliner,A320 de Airbu"; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return super.ImportantBrands()+"\navion son  Airbus, Boeing 73,Boeing 787 Dreamliner,A320 de Airbu"; 
     }
 
     @Override
     public void whattheVehicleDoes() {
         Random rand = new Random(); //instance of random class
-        System.out.println(Type +" en este momento  ");
+        System.out.println("\nEn este momento  "+id);
         int upperbound = 2;
         int int_random = rand.nextInt(upperbound);
         switch (int_random) {
@@ -55,7 +55,7 @@ public class Airplane extends Vehicle {
 
     @Override
     public String toString() {
-        return super.toString()+"con "+numberofturbines+" y sustentación"+liftsurfaces;
+        return super.toString()+"con "+numberofturbines+"turbinas y sustentación"+liftsurfaces;
     }
     
 }

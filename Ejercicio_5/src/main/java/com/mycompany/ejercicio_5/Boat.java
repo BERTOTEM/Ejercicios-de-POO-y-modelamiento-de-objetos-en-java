@@ -14,8 +14,8 @@ public class Boat extends Vehicle {
     private final String typeofrudder;
     private final String typeofanchor;
 
-    public Boat( String Type, Integer numberofpassengers, double height, double width, double length, Integer numberDoors, String mark, String meansoftransport,String typeofrudder, String typeofanchor) {
-        super(Type, numberofpassengers, height, width, length, numberDoors, mark, meansoftransport);
+    public Boat( String id, Integer numberofpassengers, double height, double width, double length, Integer numberDoors, String mark, String meansoftransport,String typeofrudder, String typeofanchor) {
+        super(id, numberofpassengers, height, width, length, numberDoors, mark, meansoftransport);
         this.typeofrudder = typeofrudder;
         this.typeofanchor = typeofanchor;
     }
@@ -32,13 +32,13 @@ public class Boat extends Vehicle {
 
     @Override
     public String ImportantBrands() {
-        return super.ImportantBrands()+"Baja,Bayliner,Chaparral,Sea Ray"; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return super.ImportantBrands()+"\nbarco son Baja,Bayliner,Chaparral,Sea Ray"; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override
     public void whattheVehicleDoes() {
         Random rand = new Random(); //instance of random class
-        System.out.println(Type +" en este momento  ");
+        System.out.println("\nEn este momento  "+id);
         int upperbound = 2;
         int int_random = rand.nextInt(upperbound);
         switch (int_random) {
@@ -51,7 +51,7 @@ public class Boat extends Vehicle {
 
     @Override
     public String toString() {
-        return super.toString()+"con tipo de ancla "+typeofanchor+"y timon tipo"+typeofrudder; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return super.toString()+"con tipo de ancla "+typeofanchor+" y timon tipo "+typeofrudder; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
     
     

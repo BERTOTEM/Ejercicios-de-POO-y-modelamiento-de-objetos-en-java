@@ -13,8 +13,8 @@ import java.util.Random;
 public class Truck extends Vehicle {
     private final Integer weightofcargo;
 
-    public Truck(String Type, Integer numberofpassengers, double height, double width, double length, Integer numberDoors, String mark, String meansoftransport,Integer weightofcargo ) {
-        super(Type, numberofpassengers, height, width, length, numberDoors, mark, meansoftransport);
+    public Truck(String id, Integer numberofpassengers, double height, double width, double length, Integer numberDoors, String mark, String meansoftransport,Integer weightofcargo ) {
+        super(id, numberofpassengers, height, width, length, numberDoors, mark, meansoftransport);
         this.weightofcargo = weightofcargo;
     }
     
@@ -29,13 +29,13 @@ public class Truck extends Vehicle {
     }
     @Override
     public String ImportantBrands() {
-        return super.ImportantBrands()+"Scania,Daf Trucks,Man,Mercedes Benz,Renault"; 
+        return super.ImportantBrands()+"\ncamion son Scania,Daf Trucks,Man,Mercedes Benz,Renault"; 
     }
 
     @Override
     public void whattheVehicleDoes() {
         Random rand = new Random(); //instance of random class
-        System.out.println("\n"+Type +" en este momento tu camion ");
+        System.out.println( "\nEn este momento  "+id);
         int upperbound = 2;
         int int_random = rand.nextInt(upperbound);
         switch (int_random) {

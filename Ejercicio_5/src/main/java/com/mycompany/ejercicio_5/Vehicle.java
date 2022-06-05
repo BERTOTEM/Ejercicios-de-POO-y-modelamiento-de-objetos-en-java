@@ -9,7 +9,7 @@ package com.mycompany.ejercicio_5;
  * @author julian mazo
  */
 public class Vehicle implements ImportantBrands {
-    protected final  String Type;
+    protected final  String id;
     protected Integer numberofpassengers;
     protected final double height;
     protected final double width;
@@ -18,7 +18,7 @@ public class Vehicle implements ImportantBrands {
     protected final String mark;
     protected final String meansoftransport;
 
-    public Vehicle(String Type,Integer numberofpassengers, double height, double width, double length, Integer numberDoors, String mark, String meansoftransport) {
+    public Vehicle(String id,Integer numberofpassengers, double height, double width, double length, Integer numberDoors, String mark, String meansoftransport) {
         this.numberofpassengers = numberofpassengers;
         this.height = height;
         this.width = width;
@@ -26,7 +26,7 @@ public class Vehicle implements ImportantBrands {
         this.numberDoors = numberDoors;
         this.mark = mark;
         this.meansoftransport = meansoftransport;
-        this.Type=Type;
+        this.id=id;
     }
     public void setNumberofpassengers(Integer numberofpassengers) {
         this.numberofpassengers = numberofpassengers;
@@ -34,7 +34,7 @@ public class Vehicle implements ImportantBrands {
 
     @Override
     public String toString() {
-        return "Vehicle: " + Type + ", con " + numberofpassengers + " pasajeros de  altura=" + height + ", peso=" + width + " y longitud=" + length + "\ncon " + numberDoors + " puertas, marca " + mark + " que se trasporta en el " + meansoftransport+".\n" ;
+        return "Dtos de"+id + ", numero de pasajeros: " + numberofpassengers + " altura: " + height + ", peso: " + width + " longitud=" + length + "\nnumeor de puertas: " + numberDoors + ", marca: " + mark + ", medio de trasporte: " + meansoftransport+".\n" ;
     }
     
     public void whattheVehicleDoes(){
@@ -42,7 +42,7 @@ public class Vehicle implements ImportantBrands {
 
     @Override
     public String ImportantBrands(){
-        return "las Marcas mas reconocidas en el mundo de este vehiculo son";
+        return "las Marcas mas reconocidas del vehiculo ";
     }
         
     

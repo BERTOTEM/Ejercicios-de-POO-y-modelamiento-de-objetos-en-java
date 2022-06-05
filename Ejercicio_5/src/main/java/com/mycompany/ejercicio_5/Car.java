@@ -13,8 +13,8 @@ import java.util.Random;
 public class Car extends Vehicle {
     private final String gearboxtype;
 
-    public Car(String Type, Integer numberofpassengers, double height, double width, double length, Integer numberDoors, String mark, String meansoftransport,String gearboxtype) {
-        super(Type, numberofpassengers, height, width, length, numberDoors, mark, meansoftransport);
+    public Car(String id, Integer numberofpassengers, double height, double width, double length, Integer numberDoors, String mark, String meansoftransport,String gearboxtype) {
+        super(id, numberofpassengers, height, width, length, numberDoors, mark, meansoftransport);
         this.gearboxtype = gearboxtype;
     }
     
@@ -29,13 +29,13 @@ public class Car extends Vehicle {
 
     @Override
     public String ImportantBrands() {
-        return super.ImportantBrands()+"BMW Group,Daimler,FCA,Ford,Geely";
+        return super.ImportantBrands()+"\ncarro son BMW Group,Daimler,FCA,Ford,Geely";
     }
 
     @Override
     public void whattheVehicleDoes() {
         Random rand = new Random(); //instance of random class
-        System.out.println(Type +" en este momento  ");
+        System.out.println("\nEn este momento "+id);
         int upperbound = 1;
         int int_random = rand.nextInt(upperbound);
         switch (int_random) {
@@ -47,7 +47,7 @@ public class Car extends Vehicle {
 
     @Override
     public String toString() {
-        return super.toString()+"con caja de cambios tipo"+gearboxtype; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return super.toString()+"con caja de cambios tipo "+gearboxtype; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
     
     

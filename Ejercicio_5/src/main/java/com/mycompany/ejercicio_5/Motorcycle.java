@@ -13,8 +13,8 @@ import java.util.Random;
 public class Motorcycle extends Vehicle {
     private final Integer cylindercapacity;
 
-    public Motorcycle(String Type, Integer numberofpassengers, double height, double width, double length, Integer numberDoors, String mark, String meansoftransport,Integer cylindercapacity) {
-        super(Type, numberofpassengers, height, width, length, numberDoors, mark, meansoftransport);
+    public Motorcycle(String id, Integer numberofpassengers, double height, double width, double length, Integer numberDoors, String mark, String meansoftransport,Integer cylindercapacity) {
+        super(id, numberofpassengers, height, width, length, numberDoors, mark, meansoftransport);
         this.cylindercapacity = cylindercapacity;
     }
     
@@ -27,13 +27,13 @@ public class Motorcycle extends Vehicle {
     
     @Override
     public String ImportantBrands() {
-        return super.ImportantBrands()+"AKT,Apollo Motors,Ayco,Bajaj,Benelli,BMW."; 
+        return super.ImportantBrands()+"\nmoto son AKT,Apollo Motors,Ayco,Bajaj,Benelli,BMW."; 
     }
 
     @Override
     public void whattheVehicleDoes() {
         Random rand = new Random(); //instance of random class
-        System.out.println(Type +" en este momento  ");
+        System.out.println("\nEn este momento  "+id);
         int upperbound = 1;
         int int_random = rand.nextInt(upperbound);
         switch (int_random) {
@@ -44,7 +44,7 @@ public class Motorcycle extends Vehicle {
 
     @Override
     public String toString() {
-        return super.toString()+"con cilindraje"+cylindercapacity; 
+        return super.toString()+"con cilindraje "+cylindercapacity; 
     }
     
     

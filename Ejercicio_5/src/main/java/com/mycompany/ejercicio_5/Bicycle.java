@@ -12,8 +12,8 @@ import java.util.Random;
  */
 public class Bicycle extends Vehicle{
     private final Integer rimsize;
-    public Bicycle(String Type, Integer numberofpassengers, double height, double width, double length, Integer numberDoors, String mark, String meansoftransport,Integer rimsize) {
-        super(Type, numberofpassengers, height, width, length, numberDoors, mark, meansoftransport);
+    public Bicycle(String id, Integer numberofpassengers, double height, double width, double length, Integer numberDoors, String mark, String meansoftransport,Integer rimsize) {
+        super(id, numberofpassengers, height, width, length, numberDoors, mark, meansoftransport);
         this.rimsize = rimsize;
     }
     public void ForMountain(){
@@ -28,7 +28,7 @@ public class Bicycle extends Vehicle{
 
     @Override
     public String ImportantBrands() {
-        return super.ImportantBrands()+"Trek,Merida,Giant,Cube,Protek,Megamo";
+        return super.ImportantBrands()+"\nbicicleta son Trek,Merida,Giant,Cube,Protek,Megamo";
     }
 
   
@@ -36,7 +36,7 @@ public class Bicycle extends Vehicle{
     @Override
     public void whattheVehicleDoes() {
         Random rand = new Random(); //instance of random class
-        System.out.println(Type +" en este momento  ");
+        System.out.println("\nEn este momento  "+id);
         int upperbound = 2;
         int int_random = rand.nextInt(upperbound);
         switch (int_random) {
