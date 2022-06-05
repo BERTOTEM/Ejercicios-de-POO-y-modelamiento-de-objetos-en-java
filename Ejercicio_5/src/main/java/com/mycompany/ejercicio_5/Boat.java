@@ -42,9 +42,9 @@ public class Boat extends Vehicle {
         int upperbound = 2;
         int int_random = rand.nextInt(upperbound);
         switch (int_random) {
-            case 0 : Tower();
-            case 1 : SurveillanceBoat();
-            case 2 : Cruising();
+            case 0 : Tower();break;
+            case 1 : SurveillanceBoat();break;
+            case 2 : Cruising();break;
             default : System.out.println("nada");
         }
     }

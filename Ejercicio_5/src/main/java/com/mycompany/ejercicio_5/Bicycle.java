@@ -40,9 +40,9 @@ public class Bicycle extends Vehicle{
         int upperbound = 2;
         int int_random = rand.nextInt(upperbound);
         switch (int_random) {
-            case 0 : ForMountain();
-            case 1 : ForExercise();
-            case 2 : ForBmx();
+            case 0 : ForMountain();break;
+            case 1 : ForExercise();break;
+            case 2 : ForBmx();break;
             default : System.out.println("nada");
         }
     }

@@ -46,9 +46,9 @@ public class Airplane extends Vehicle {
         int upperbound = 2;
         int int_random = rand.nextInt(upperbound);
         switch (int_random) {
-            case 0 : Cargo();
-            case 1 : PassengerTransport();
-            case 2 : InFlightRefueling();
+            case 0 : Cargo();break;
+            case 1 : PassengerTransport();break;
+            case 2 : InFlightRefueling();break;
             default : System.out.println("nada");
         }
     }

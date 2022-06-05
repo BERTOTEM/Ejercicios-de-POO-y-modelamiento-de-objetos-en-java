@@ -29,19 +29,22 @@ public class Truck extends Vehicle {
     }
     @Override
     public String ImportantBrands() {
-        return super.ImportantBrands()+"Scania,Daf Trucks,Man,Mercedes Benz,Renault"; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return super.ImportantBrands()+"Scania,Daf Trucks,Man,Mercedes Benz,Renault"; 
     }
 
     @Override
     public void whattheVehicleDoes() {
-         Random rand = new Random(); //instance of random class
-        System.out.println(Type +" en este momento  ");
+        Random rand = new Random(); //instance of random class
+        System.out.println("\n"+Type +" en este momento tu camion ");
         int upperbound = 2;
         int int_random = rand.nextInt(upperbound);
         switch (int_random) {
-            case 0 : Tugs();
-            case 1 : Moving();
-            case 2 : DeliveryService();
+            case 0 :{ Tugs();
+                      break;}
+            case 1 : {Moving();
+                      break;}
+            case 2 : {DeliveryService();
+                      break;}
             default : System.out.println("nada");
         }
     }
