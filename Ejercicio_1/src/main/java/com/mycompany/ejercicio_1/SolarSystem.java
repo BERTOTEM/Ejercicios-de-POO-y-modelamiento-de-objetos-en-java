@@ -7,14 +7,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- *
+ * Representa un sistema solar con algunos atributos y comportamientos 
  * @author julian mazo
  */
 public class SolarSystem {
     
     /**
      * Instancia del sistema solar
-     * @param name 
+     * @param name nombre del sistema sola
      */
     public SolarSystem(String name){
         this.name=name;
@@ -48,7 +48,9 @@ public class SolarSystem {
         }
         return null;
     }
-    
+    /**
+     * construye la arrayList del Sistema solar 
+     */
     private void createSolarSystem(){
         Star sol=new Star("Sol", 1.9891E30, 1392000);
         

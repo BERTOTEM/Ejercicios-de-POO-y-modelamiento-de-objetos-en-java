@@ -11,27 +11,37 @@ import java.util.Scanner;
  * @author julian mazo
  */
 public class Ejercicio_1 {
-
+    
+    /**
+    * Creación de un objeto de la clase SolarSystem con cuatro parámetros.
+    */
     static SolarSystem SSL = new SolarSystem("Solar System");
+    /**
+    * Creación de un objeto de la clase Scanner para la entrada de parametros
+    */
     static Scanner entry = new Scanner(System.in);
 
     public static void main(String[] args) {
-        mainMenu();
-    }
-
-    private static void mainMenu() {
-
+        /**
+         * variable qeu guarda la opcion que escoje el usuario 
+         */
+        String opc;
         try {
-            String opc;
-            System.out.println("""
+            
+            /**
+             * ciclo do while para la repeticon del meno hasta el usuario decida salir
+             */
+            do {
+                
+                System.out.println("""
                                1- Calcular la atracci\u00f3n gravitatoria
                                0- Salir del programa""");
-            
-            do {
                 System.out.println("\nSelect the option: ");
                 opc = entry.nextLine();
                
-
+                /**
+                 * switch para es coger entre el calcula de la atraccion y salir del programa
+                 */
                 switch (opc) {
                     case "1":
                         SSL.displaySolarSystem();
@@ -53,7 +63,7 @@ public class Ejercicio_1 {
                                 System.out.println("\nLa atraciion gravitacional es: " + calculo + " Newton");
                             }
                         }
-                        mainMenu();
+                        
                         break;
                     case "0":
                         System.out.println("\nsaliendo del programa!\n");
@@ -61,7 +71,7 @@ public class Ejercicio_1 {
 
                     default:
                         System.out.println("\nNo es una selección válida!\n");
-                        mainMenu();
+                      
                                         
                       
                 }
@@ -73,4 +83,5 @@ public class Ejercicio_1 {
             entry.nextLine();
         }
     }
+
 }

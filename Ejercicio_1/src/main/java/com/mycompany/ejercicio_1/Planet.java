@@ -5,7 +5,7 @@
 package com.mycompany.ejercicio_1;
 
 /**
- *
+ * Representa un planeta con algunos atributos
  * @author julian mazo
  */
 public class Planet extends SystemObject {
