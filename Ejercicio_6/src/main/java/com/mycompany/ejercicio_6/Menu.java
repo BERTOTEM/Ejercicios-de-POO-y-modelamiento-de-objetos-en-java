@@ -20,30 +20,35 @@ public class Menu {
      * Creación de vector de números enteros.
      */
     Vector<Integer> vector = new Vector<Integer>();
+    /**
+     * iniciacion de variable previous
+     */
     Integer previous = null;
-
-    public void receiveNumbers() {
-        System.out.println("Este programa lee números del teclado hasta que se introduce\nDos veces SEGUIDAS el mismo número\n");
+    /**
+     * Metodo que recibe un numero por teclado y lo compara con el anterio para saber si en consola se ingresaron seguido
+     * si esto es verdad el me muestra el vector con TODOS los numeros ingresados.
+     */
+    public void enternumbers() {
+        System.out.println("Este programa lee numeros del teclado hasta que se introduce\nDos veces SEGUIDAS el mismo número\n");
         try (Scanner entry = new Scanner(System.in)) {
-             do{
+            do{
                 try{
-                System.out.println("\nintroduce un numero\n");
-                int number = entry.nextInt();
-                if (previous != null && previous == number){
+                    System.out.println("\nintroduce un numero\n");
+                    int number = entry.nextInt();
+                    if (previous != null && previous == number){
+                        vector.add(number);
+                        break;
+                    }
                     vector.add(number);
-                    break;
+                    previous = number;
                 }
-                vector.add(number);
-                previous = number;
-               
-            }
-                catch (InputMismatchException ime){
+                catch (InputMismatchException J){
                     System.out.println("¡Cuidado! Solo puedes agregar numeros. ");
                     previous = null;
                     entry.next();}
-        }while (true);
+            }while (true);
       
-  }		
+        }		
         System.out.println("los numeros digitados son:" + vector);
     }
 }

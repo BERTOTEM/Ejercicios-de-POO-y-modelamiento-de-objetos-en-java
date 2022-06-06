@@ -6,13 +6,16 @@
 package com.mycompany.ejercicio_6;
 
 /**
- *
+ *Representa una clase Ejercicio_6 para mostras el siguiete comportamiento; números del teclado hasta que se introduce dos veces seguidas el mismo número 
  * @author julian mazo
  */
 public class Ejercicio_6 {
 
     public static void main(String[] args) {
+        /**
+         * Creacion de una clase menu
+         */
         Menu menu = new Menu();
-        menu.receiveNumbers();
+        menu.enternumbers();
     }
 }
