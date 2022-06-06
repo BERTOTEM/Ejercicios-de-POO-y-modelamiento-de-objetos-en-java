@@ -113,22 +113,20 @@ public class Menu {
     /**
      * 
      * @param numbers Array
-     * @param left Starting index.
-     * @param right Ending index.
+     * @param left inico index.
+     * @param right final index.
      */
     public static void quickSort(Double [] numbers, int left, int right) {
 
-        /**
-         *Takes first element as pivot.
-         */
+        
         Double pivot = numbers [left]; 
         int i = left;         
         int j = right;      
         Double aux;
         
         /**
-         * Find the element less than the pivot and the element greater than the pivot.
-         * If i < j, exchance the positions.
+         * Encuentra el elemento menor que el pivote y el elemento mayor que el pivote.
+         * If i < j, intercambiar los puestos..
          */
         while (i < j){                          
             while (numbers[i] <= pivot && i < j) i++; 
@@ -140,7 +138,7 @@ public class Menu {
             }
         }
         /**
-         * Smaller numbers to the left in the array and bigger numbers to the right.
+         * números más pequeños a la izquierda en la matriz y números más grandes a la derecha
          */
         numbers[left]=numbers[j];    
         numbers[j]=pivot;      
