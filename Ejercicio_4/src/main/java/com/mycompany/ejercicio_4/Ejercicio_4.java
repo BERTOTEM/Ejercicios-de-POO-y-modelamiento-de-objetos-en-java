@@ -15,8 +15,17 @@ import java.util.Scanner;
 public class Ejercicio_4 {
 
     public static void main(String[] args) {
+        /**
+         * crea una ArryList para los datos de los vehiculos
+         */
         ArrayList<Vehicle> Datos =new ArrayList();
+        /**
+         * contador para los 10 vehiculos
+         */
         int i = 0;
+        /**
+         * atributos de vehiculo para la creacion de estos mismos
+         */
         String type;
         Integer numberofpassengers;
         double height;
@@ -26,7 +35,13 @@ public class Ejercicio_4 {
         Integer numberDoors;
         String mark;
         String meansoftransport;
-        do{
+        /**
+         * Ciclo do while para generar 10 vehiculos
+         */
+        do{ 
+             /**
+            *Creacion un objeto de la clase Scanner para la entrada de datos
+            */
             Scanner entry = new Scanner(System.in);
             System.out.println("Tipo de vehiculo" ); 
             type = entry.nextLine();
@@ -87,12 +102,18 @@ public class Ejercicio_4 {
             i++;
             System.out.println("Si desea salir digite *salir*, si no solo oprima enter");
             String option = entry.nextLine();
+            /**
+             * concion por si el usuario no quiere crear los 10 vehiculos si no un numero menor
+             */
             if(option.equalsIgnoreCase("salir")){
                 i=10;
             }
             
         }while(!(i==10));
         System.out.println("Los vehiculos guardados son:\n");
+        /**
+         * ciclo for para recorrer toda la ArrayList de los vehiculos creados
+         */
         for(Vehicle vehicle: Datos){
             System.out.println(vehicle.toString());
         }

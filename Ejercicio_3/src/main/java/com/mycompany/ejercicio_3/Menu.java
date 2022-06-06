@@ -10,7 +10,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- *
+ *Representa el menu para el siguiente comportamiento ordene mediante el algoritmo de la burbuja o mediante quick sort
  * @author julian mazo
  */
 
@@ -18,55 +18,55 @@ public class Menu {
 
     static Scanner entry = new Scanner(System.in);
     static char response;
-    Double[] numbers = new Double[10];
-    DecimalFormat df = new DecimalFormat("#.00");
-
-    public int Menu() {
-        int option;
-        System.out.print("\nCon cuál método quieres organizar la lista? \n" +
-                "1- Algoritmo de la burbuja \n" +
-                "2- Quicksort\n" +
-                "\nSeleccionar opción: ");
-        option = entry.nextInt();
-        return option;
-    }
+    Double[] numbers = new Double[15];
+    DecimalFormat decimal = new DecimalFormat("#.0");
+    String choice;
+  
 
     public void chooseSortMethod() {
-
-        /**
-         * Displays menu from showMenu(): Contains a switch,
-         * executes case based on returned int from showMenu().
-         * Creation of an exception handling in case the user enters an input different
-         * from int.
-         */
+        System.out.print("""
+                         
+                         Con cu\u00e1l m\u00e9todo quieres organizar la lista? 
+                         1- Algoritmo de la burbuja 
+                         2- Quicksort
+                         0- salir
+                         
+                         Seleccionar opci\u00f3n: """);
+        
         try {
-            int option = Menu();
-            switch (option) {
-                case 1:
+            choice = entry.nextLine();
+            switch (choice) {
+                case "1" -> {
                     bubbleOrright();
                     chooseSortMethod();
-                    break;
-                case 2:
+                }
+                case "2" -> {
                     getArray();
                     quickSort(numbers, 0, numbers.length-1);
                     System.out.println("\nArreglo ordenado con quick sort: \n");
-                    for (int i = 0; i < numbers.length; i++)
-                        System.out.println(df.format(numbers[i]));
-                        chooseSortMethod();
-                    break;
-                default:
-                    System.out.println("\nNo es una selección válida!\n");
+                for (Double number : numbers) {
+                    System.out.println(decimal.format(number));
+                }
                     chooseSortMethod();
+                }
+                default -> {
+                    if (!choice.equalsIgnoreCase("0")) {
+                            System.out.println("\nNo es una selección válida!\n");
+                            chooseSortMethod();
+                    } else {
+                    }
+                }
             }
         } catch (InputMismatchException e) {
             System.out.println("\nDebes ingresar un número entero! Corre de nuevo el programa\n");
             entry.nextLine();
+            
         }
     }
 
     /**
-     * Adds random numbers to the array.
      * 
+     * metodo para agragar numeros ramdom a una array
      * @return
      */
     public Double[] getArray() {
@@ -74,15 +74,15 @@ public class Menu {
         System.out.println("\nLista de números reales aleatorios: \n");
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = (Math.random() * 20 + 1);
-            System.out.println(df.format(numbers[i]));
+            System.out.println(decimal.format(numbers[i]));
         }
         return numbers;
     }
 
     /**
      * 
-     * @param numbers Array that's going to be orrighted.
-     * @return Returns orrighted Array.
+     * @param numbers Array que va a ser orientado.
+     * @return Returns array orientada.
      */
     public static Double[] bubble(Double[] numbers) {
         Double aux;
@@ -107,7 +107,7 @@ public class Menu {
         Double[] orrightedArray = bubble(getArray());
         System.out.println("\nArreglo ordenado con bubble sort\n");
         for (int i = 0; i < orrightedArray.length; i++)
-            System.out.println(df.format(orrightedArray[i]));
+            System.out.println(decimal.format(orrightedArray[i]));
     }
 
     /**

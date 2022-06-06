@@ -6,7 +6,7 @@
 package com.mycompany.ejercicio_3;
 
 /**
- *
+ * representa el siguiente comportamiento ordena mediante el algoritmo de la burbuja o mediante quick sort
  * @author julian mazo
  */
 public class Ejercicio_3 {
